@@ -3,7 +3,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head, Link } from '@inertiajs/vue3';
 
 const props = defineProps({
-    role: Object,
+    role: Array,
 });
 </script>
 
