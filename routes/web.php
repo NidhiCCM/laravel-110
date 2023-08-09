@@ -5,7 +5,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\RoleController;
-use App\Http\Controllers\RoleCRUDController;
+use App\Http\Controllers\RoleTableController;
 use App\Http\Controllers\RoleDataTableController;
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +38,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::apiResource('/roles', RoleController::class);
-    Route::resource('/rolesCRUD', RoleCRUDController::class);
+    Route::resource('/roles-table', RoleTableController::class);
     Route::resource('/datatable', RoleDataTableController::class);
 });
 

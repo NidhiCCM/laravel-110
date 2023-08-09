@@ -75,7 +75,6 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
-        dd($role);
         $role->delete();
 
         return redirect()->to('/roles');

@@ -1,6 +1,9 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head, Link, useForm } from '@inertiajs/vue3';
+import { 
+    Head, 
+    Link, 
+    useForm } from '@inertiajs/vue3';
 import TextInput from '@/Components/TextInput.vue';
 
 const props = defineProps({
@@ -13,12 +16,12 @@ const form = useForm({
 });
 
 const updateRole = () => {
-    form.put(route('rolesCRUD.update', form.id));
+    form.put(route('roles-table.update', form.id));
 };
 </script>
 
 <template>
-    <Head title="RolesCRUD" />
+    <Head title="roles-table" />
     <AuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">Edit Role</h2>
@@ -42,7 +45,7 @@ const updateRole = () => {
                                 <p v-if="form.recentlySuccessful" class="text-sm text-gray-600">Updated.</p>
                             </Transition>
                         </div>
-                        <Link class=" px-4 py-2 text-sm text-white bg-blue-500 rounded" :href="route('rolesCRUD.index')">
+                        <Link class=" px-4 py-2 text-sm text-white bg-blue-500 rounded" :href="route('roles-table.index')">
                         Back
                         </Link>
                     </form>

@@ -32,17 +32,15 @@
 </template>
 
 <script setup>
-    // Import the useForm helper
+   
     import { useForm } from "@inertiajs/vue3";
     import PrimaryButton from '@/Components/PrimaryButton.vue';
 
-    // Initialise the form with the properties we want to update client-side send to the server-side
     const roleForm = useForm({
         role: '',
     });
 
-    // Create a method that tells the form to submit to TodoController@store
     const createRole = () => {
-        roleForm.post('/roles');
+        roleForm.post(route('roles.store'));
     };
 </script>

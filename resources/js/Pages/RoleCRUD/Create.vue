@@ -1,18 +1,21 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head, Link, useForm } from '@inertiajs/vue3';
+import { 
+    Head,
+    Link, 
+    useForm } from '@inertiajs/vue3';
 
 const form = useForm({
     role: '',
 });
 
 const createRole = () => {
-    form.post(route('rolesCRUD.store'));
+    form.post(route('roles-table.store'));
 };
 </script>
 
 <template>
-    <Head title="RolesCRUD-Create"/>
+    <Head title="roles-table-Create"/>
     <AuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">Create Role</h2>
@@ -32,7 +35,7 @@ const createRole = () => {
                             <button :disabled="form.processing" 
                                 class="px-6 py-2 text-white bg-green-500 rounded-md focus:outline-none">Add</button>
                         </div>
-                        <Link class=" px-4 py-2 text-sm text-white bg-blue-500 rounded" :href="route('rolesCRUD.index')">
+                        <Link class=" px-4 py-2 text-sm text-white bg-blue-500 rounded" :href="route('roles-table.index')">
                         Back
                         </Link>
                     </form>

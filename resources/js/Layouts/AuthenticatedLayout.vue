@@ -35,8 +35,8 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('roles.index')" :active="route().current('roles.index')">
                                     Roles
                                 </NavLink>
-                                <NavLink :href="route('rolesCRUD.index')" :active="route().current('rolesCRUD.index')">
-                                    RolesCRUD
+                                <NavLink :href="route('roles-table.index')" :active="route().current('roles-table.index')">
+                                    Roles Table
                                 </NavLink>
                                 <NavLink :href="route('datatable.index')" :active="route().current('datatable.index')">
                                     DataTable
@@ -127,8 +127,8 @@ const showingNavigationDropdown = ref(false);
                         <ResponsiveNavLink :href="route('roles.index')" :active="route().current('roles.index')">
                             Roles
                         </ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('rolesCRUD.index')" :active="route().current('rolesCRUD.index')">
-                            RolesCRUD
+                        <ResponsiveNavLink :href="route('roles-table.index')" :active="route().current('roles-table.index')">
+                            Roles Table
                         </ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('datatable.index')" :active="route().current('datatable.index')">
                             DataTable

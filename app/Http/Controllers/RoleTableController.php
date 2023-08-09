@@ -8,7 +8,7 @@ use Inertia\Inertia;
 use App\Http\Requests\RoleStoreRequest;
 use App\Http\Requests\RoleUpdateRequest;
 
-class RoleCRUDController extends Controller
+class RoleTableController extends Controller
 {
     public function __construct()  
     {  
@@ -39,7 +39,7 @@ class RoleCRUDController extends Controller
         $validated = $request->validated();
         $request->user()->roles()->create($validated);
 
-        return redirect()->route('rolesCRUD.index')
+        return redirect()->route('roles-table.index')
         ->with('success', 'Role created successfully');
     }
 
@@ -69,7 +69,7 @@ class RoleCRUDController extends Controller
         $validated =$request->validated();
         $rolesCRUD->update($validated);
       
-        return redirect()->to('/rolesCRUD') ->with('success', 'Role updated successfully');
+        return redirect()->route('roles-table.index') ->with('success', 'Role updated successfully');
     }
 
     /**
@@ -80,7 +80,7 @@ class RoleCRUDController extends Controller
         
         $rolesCRUD->delete();
 
-        return redirect()->to('/rolesCRUD')
+        return redirect()->route('roles-table.index')
         ->with('success', 'Role deleted successfully');
     }
 }

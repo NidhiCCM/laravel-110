@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Role;
 use Illuminate\Support\Collection;
 use Inertia\Inertia;
-
+use App\Http\Requests\RoleStoreRequest;
+use App\Http\Requests\RoleUpdateRequest;
 class RoleDataTableController extends Controller
 {
 
@@ -33,9 +34,13 @@ class RoleDataTableController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(RoleStoreRequest $request)
     {
-        //
+        $validated = $request->validated();
+        $request->user()->roles()->create($validated);
+
+        return redirect()->route('datatable.index')
+        ->with('success', 'Role created successfully');
     }
 
     /**

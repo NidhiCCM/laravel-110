@@ -1,5 +1,5 @@
 <script setup>
-import Role from "@/Components/Role.vue";
+import RoleList from '@/Components/RoleList.vue';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import AddRoleForm from '@/Components/AddRoleForm.vue';
 import { Head } from '@inertiajs/vue3';
@@ -21,8 +21,11 @@ const props = defineProps({
                     <div class="mx-auto max-w-3xl mt-10 mb-10  px-4">
                         <h1 class="font-light text-3xl">My Roles List</h1>
                         <div class="flex flex-col space-y-4 mt-5">
-                            <AddRoleForm/>
-                            <Role v-for="role in roles.data" :key="role.id" :role="role" />
+                            <add-role-form/>
+                            <role-list
+                            v-for="role in roles.data" 
+                            :key="role.id" 
+                            :role="role"/>
                         </div>
                     </div>
                 </div>
